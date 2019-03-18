@@ -8,10 +8,10 @@ in another classic form:
    IN GRAPHICS:   x = x + pixels
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Aaron Wilkin, their colleagues, and Nihaar Munnamgi.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
-
+import math
 # -----------------------------------------------------------------------------
 # Students: As you work each of these problems, ask yourself:
 #   1. Do I need a loop?
@@ -98,7 +98,11 @@ def sum_more_cosines(m, n):
     #   Just   range(blah)   where blah is a single variable.
     #   Reason: To ensure that you get more practice using expressions.
     # -------------------------------------------------------------------------
+    total = 0
+    for k in range(m,n+1):
+        total = total + math.cos(k)
 
+    return total
 
 def run_test_count_sines_from():
     """ Tests the   count_sines_from   function. """
@@ -154,6 +158,11 @@ def count_sines_from(m, n):
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
+    count = 0
+    for k in range(m,n+1):
+        if math.sin(k)<0.5:
+            count = count + 1
+    return count
 
 
 def run_test_count_sines_vs_cosines():
@@ -216,7 +225,11 @@ def count_sines_vs_cosines(m):
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
-
+    count = 0
+    for k in range(-m, m+1):
+        if math.sin(k)>math.cos(k):
+            count = count + 1
+    return count
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
